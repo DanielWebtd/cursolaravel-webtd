@@ -2,6 +2,7 @@ PASOS BÁSICOS-GENERALES PARA CLONAR UN PROYECTO LARAVEL A TU COMPUTADORA LOCAL.
 
 1. Clonar el proyecto (lo mejor es clonar por SSH pero de momento asi lo voy a dejar).
 -Primero te posicionas en la ruta donde clonarás el proyecto y abres un CMD y tecleas lo siguiente
+
 -git clone https://github.com/DanielWebtd/cursolaravel-webtd.git // obviamente la difeccíon cambia de acuerdo al repo.
 
 
