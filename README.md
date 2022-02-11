@@ -3,10 +3,12 @@ PASOS BÁSICOS-GENERALES PARA CLONAR UN PROYECTO LARAVEL A TU COMPUTADORA LOCAL.
 1. Clonar el proyecto (lo mejor es clonar por SSH pero de momento asi lo voy a dejar).
 -Primero te posicionas en la ruta donde clonarás el proyecto y abres un CMD y tecleas lo siguiente
 
--git clone https://github.com/DanielWebtd/cursolaravel-webtd.git // obviamente la difeccíon cambia de acuerdo al repo.
+-git clone https://github.com/DanielWebtd/cursolaravel-webtd.git // obviamente la dirección cambia de acuerdo al repo.
 
 
 2. Instalar las dependencias de Composer
+
+
 -composer update // esto se hace como un CMD ubicado en la raíz del proyecto.
 
 3. Instalar las dependencias NodeJS (obviamente ya tienes que tener instalador NodeJS en una versión LTS (tengo la 16.13.1 y funciona bien para Laravel 9)
