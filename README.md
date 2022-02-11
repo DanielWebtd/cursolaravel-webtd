@@ -10,7 +10,9 @@ PASOS BÁSICOS-GENERALES PARA CLONAR UN PROYECTO LARAVEL A TU COMPUTADORA LOCAL.
 -composer update // esto se hace como un CMD ubicado en la raíz del proyecto.
 
 3. Instalar las dependencias NodeJS (obviamente ya tienes que tener instalador NodeJS en una versión LTS (tengo la 16.13.1 y funciona bien para Laravel 9)
+
 -npm i // esto se hace como un CMD ubicado en la raíz del proyecto.
+
 -npm run dev // esto se hace como un CMD ubicado en la raíz del proyecto.
 
 4. Sacarle copia al archivo .env.example y pegarla ahí mismo en la raíz del proyecto, pero ahora que se
@@ -22,9 +24,13 @@ llame .env, de ahí haces la configuración pertinente según tu entorno de desa
 ***ESTOS COMANDOS TAMBIÉN SE HACEN LA RAÍZ DE TU PROYECTO CON UN CMD) ***
 
 5. Instalar las migraciones y ejecutarlas (ESTE PASO SE HACE OBVIAMENTE SI SE TRABAJA CON MIGRACIONES, QUE DEBERÍA)
+
 -php artisan migrate:install // este comando es necesario para instalar las migraciones (tabla migrations) y para despuÉs saber que migraciones se van a ejecutar
+
 -php artisan migrate:status // COMANDO MUY IMPORTANTE PORQUE VAS A SABER QUE MIGRACIONES SE VAN A EJECUTAR, NO ES BUENO EJECUTAR php artisan migrate luego luego porque no sabrÍas que se ejecutará
+
 -php artisan migrate // una vez que ya sabes lo que se va a ejecutar de migraciones ahora si tecleas este comando
 
 6. Generar la key de la app (APP_KEY que está en el archivo.env).
+
 -php artisan key:generate
