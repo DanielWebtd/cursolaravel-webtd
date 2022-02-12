@@ -39,7 +39,11 @@ llame .env, de ahí haces la configuración pertinente según tu entorno de desa
 
 7. Cambiar la timezone y el idioma en config\app.php
 -Por ejemplo para México y el idioma español sería...
+
 'timezone' => 'America/Mexico_city'
+
 'locale' => 'es',
+
 'fallback_locale' => 'en'
+
 Obviamente la traducción servirá hasta que hayas instalado un paquete/librería de terceros que te traduzca tu app.
