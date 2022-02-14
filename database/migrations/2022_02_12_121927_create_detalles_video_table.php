@@ -20,7 +20,7 @@ return new class extends Migration
             $table->timestamp('fecha_publicacion');
             $table->enum('extension', ['.mp4', '.mov', '.wmv']);
             $table->string('dimensiones', 50)->nullable();
-            $table->unsignedBigInteger('video_id');
+            $table->unsignedBigInteger('video_id')->unique(); // Relacion 1:1
             $table->unsignedBigInteger('cantidad_visitas');
             $table->double('ganancia_generada');
             $table->timestamps();
