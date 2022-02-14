@@ -17,9 +17,6 @@ class ComentarioSeeder extends Seeder
      */
     public function run()
     {
-        Comentario::factory()->count(500)->create([
-
-            'comentario' => 'un valor diferente del factory',
-        ]);
+        Comentario::factory()->count(500)->create();
     }
 }
