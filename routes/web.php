@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\QueryBuilderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,5 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('videos', App\Http\Controllers\VideosController::class);
+
+Route::get('pruebas', [QueryBuilderController::class, 'pruebas'])->name('query.builder');
