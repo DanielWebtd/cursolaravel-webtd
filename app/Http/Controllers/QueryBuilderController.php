@@ -18,14 +18,27 @@ class QueryBuilderController extends Controller
             ->orderBy('videos.id')
             ->get();
 
-        $detallesVideo = DB::table('detalles_video')
-            ->selectRaw('extension, COUNT(*) AS numeroVideos')
-            ->groupBy('extension')
-            ->having('extension', '=', '.mp4')
+        $subconsulta1 = DB::table('videos')
+            ->whereIn('videos.id', function($query) {
+
+                $query->select('videos.id')
+                    ->from('videos AS v')
+                    ->join('users', 'users.id', '=', 'videos.user_id')
+                    ->where('email', 'LIKE', '%example.com%')
+                    ->distinct();
+            })
+            ->get();
+        $subconsulta2 = DB::table('detalles_video')
+            ->select('video_id')
+            ->where('ganancia_generada', function($query) {
+
+                $query->selectRaw('MAX(ganancia_generada)')
+                    ->from('detalles_video AS detalles_video_s')
+                    ->limit(1);
+            })
             ->get();
         
-       return 'ok';
-
+        return 'ok';
         return view('query-builder.videos')
             ->with('data', $data);
     }
