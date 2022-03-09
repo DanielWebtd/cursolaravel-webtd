@@ -21,4 +21,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('videos', App\Http\Controllers\VideosController::class);
 
+Route::get('filtros', [QueryBuilderController::class, 'filtros'])->name('query.builder.filtros');
 Route::get('pruebas', [QueryBuilderController::class, 'pruebas'])->name('query.builder');
