@@ -12,6 +12,7 @@
         @csrf
         <label for="extension">Extensión</label><br>
         <select name="extension" id="extension">
+            <option value="">Seleccione extensión</option>
             <option value=".mp4">MP4</option>
             <option value=".mov">MOV</option>
             <option value=".wmv">WMV</option>
