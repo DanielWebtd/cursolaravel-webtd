@@ -25,6 +25,12 @@
         <label for="gananciaGenerada">Ganancia generada</label><br>
         <input type="number" name="gananciaGenerada" id="gananciaGenerada">
         <br><br>
+        <select name="ordenacion" id="ordenacion">
+            <option value="">Ordenar por</option>
+            <option value="ganancia_generada">Ganancia generada</option>
+            <option value="titulo">Título video</option>
+        </select>
+        <br><br>
         <input type="submit" value="Buscar">
     </form> 
 </body>
