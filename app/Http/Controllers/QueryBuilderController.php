@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class QueryBuilderController extends Controller
 {
@@ -67,17 +68,15 @@ class QueryBuilderController extends Controller
 
     public function insert() 
     {
-        DB::table('users')->insert([
+        $idComentarioInsertado = DB::table('comentarios')->insertGetId([
 
-            'name' => 'WEBTD',
-            'email' => 'soportewebtd@gmail.com',
-            'email_verified_at' => now(),
-            'password' => Hash::make('12345678'),
-            'remember_token' => null,
-            'created_at' => now(), // 2022-03-22 11:13:45,
-            'updated_at' => now()
+                'comentario' => 'excelente trabajo',
+                'video_id' => 5,
+                'publicado' => 0,
+                'created_at' => now(),
+                'updated_at' => now()
         ]);
 
-        return 'ok';
+        dd($idComentarioInsertado);
     }
 }
