@@ -79,4 +79,23 @@ class QueryBuilderController extends Controller
 
         dd($idComentarioInsertado);
     }
+
+    public function update() 
+    {
+        $numRegistrosAfectados = DB::table('users')
+        
+            ->where('id', 503)
+            ->update(['email' => 'juan.perez2022@hotmail.com', 'name' => 'juanitoP', 'updated_at' => now()]);
+
+        dd($numRegistrosAfectados);
+    }
+
+    public function delete() 
+    {
+
+        DB::table('comentarios')
+            ->truncate();
+
+        return 'ok';
+    }
 }
