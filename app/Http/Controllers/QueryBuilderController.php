@@ -92,10 +92,42 @@ class QueryBuilderController extends Controller
 
     public function delete() 
     {
+        /* implicit commmit. */
+        DB::beginTransaction(); // Afuera del try.
+        try {
 
-        DB::table('comentarios')
-            ->truncate();
+            DB::table('detalles_video')
+                ->where('video_id', 7)
+                ->delete();
+        
+            DB::table('comentarios')
+                ->where('video_id', 7)
+                ->delete();
+            
+            DB::table('clasificacion_video')
+                ->where('video_id', 7)
+                ->delete();
 
-        return 'ok';
+            DB::statement('CREATE TABLE una_tabla (columna VARCHAR(255) NULL)'); // ¡CUIDADO! - genera commit implicito! - DB::commit();
+            // Despues de aqui se committed la transaccion.
+            
+            DB::table('videos')
+                ->where('id', 7)
+                ->delete();
+
+            /* SI LLEGO HASTA AQUI NO HUBO EXCEPCION EN LAS
+            ANTERIORES SENTENCIAS */
+            DB::commit(); // Confirmamos todo.
+            return 'ok';
+        } catch(\Exception $e) {
+
+            DB::rollBack();
+            throw $e;
+        } 
+        catch (\Throwable $e) {
+            
+            DB::rollBack(); // Cancelamos, revertimos todo.
+            throw $e; // re-throw.
+        }
     }
 }
